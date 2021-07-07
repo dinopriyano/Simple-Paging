@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
+import androidx.navigation.NavController
+import androidx.navigation.fragment.NavHostFragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.dupat.simplepaging.R
 import com.dupat.simplepaging.databinding.ActivityMainBinding
@@ -16,23 +18,16 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private val viewModel: MovieViewModel by viewModels()
-    private val movieAdapter = MoviePagingAdapter()
+    private lateinit var controller: NavController
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        setupRecyclerView()
-        viewModel.movies.observe(this, Observer {
-            movieAdapter.submitData(lifecycle, it)
-        })
+        controller = (supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment).navController
     }
 
-    private fun setupRecyclerView() {
-        binding.rvMovie.apply {
-            adapter = movieAdapter
-            layoutManager = LinearLayoutManager(this@MainActivity, LinearLayoutManager.VERTICAL, false)
-        }
-    }
+
 }
