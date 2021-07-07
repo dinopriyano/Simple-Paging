@@ -8,6 +8,6 @@
     <fragment
         android:id="@+id/movieFragment"
         android:name="com.dupat.simplepaging.ui.fragment.MovieFragment"
-        android:label="fragment_movie"
+        android:label="Movie"
         tools:layout="@layout/fragment_movie" />
 </navigation>
