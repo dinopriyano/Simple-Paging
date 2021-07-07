@@ -4,6 +4,7 @@ plugins {
     id 'kotlin-android-extensions'
     id 'kotlin-kapt'
     id 'dagger.hilt.android.plugin'
+    id 'androidx.navigation.safeargs.kotlin'
 }
 
 android {
@@ -49,7 +50,6 @@ dependencies {
     // Activity KTX
     implementation("androidx.activity:activity-ktx:$activity_version")
 
-
     //retrofit and converter gson
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
     implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
@@ -64,8 +64,13 @@ dependencies {
     //paging 3
     implementation "androidx.paging:paging-runtime:$paging_version"
 
+    //Navigation component Kotlin
+    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+
     //hilt
     implementation("com.google.dagger:hilt-android:$hilt_version")
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     kapt("com.google.dagger:hilt-android-compiler:$hilt_version")
 
     //dagger
