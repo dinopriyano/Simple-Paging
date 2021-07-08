@@ -64,7 +64,7 @@
             android:fontFamily="@font/roboto_medium"
             android:maxLines="2"
             android:text="27 Sep 2020"
-            android:textColor="#EFEFEF"
+            android:textColor="@color/grayEF"
             android:textSize="15sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/containerMovieImage"

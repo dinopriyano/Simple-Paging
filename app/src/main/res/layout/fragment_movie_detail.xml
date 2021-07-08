@@ -1,57 +1,218 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView
+    android:id="@+id/container"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient_purple"
+    android:background="@drawable/gradient_pink"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.fragment.MovieDetailFragment">
 
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/materialCardView2"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
-        android:clickable="true"
-        app:cardBackgroundColor="@color/white"
-        app:cardCornerRadius="40dp"
-        app:cardElevation="0dp"
-        app:contentPadding="5dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:rippleColor="@color/rippleColorCard">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/materialCardView2"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:clickable="true"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="40dp"
+            app:cardElevation="0dp"
+            app:contentPadding="5dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:rippleColor="@color/rippleColorCard">
+
+            <ImageView
+                android:id="@+id/ivMovie"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:adjustViewBounds="true" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/txtTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="20dp"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:fontFamily="@font/roboto_bold"
+            android:text="Once Upon a Time in Hollywood"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="@+id/materialCardView2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/materialCardView2"
+            app:layout_constraintTop_toTopOf="@+id/materialCardView2" />
+
+        <TextView
+            android:id="@+id/txtFrom"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="from United States"
+            android:textColor="@color/grayEF"
+            android:textSize="14sp"
+            android:layout_marginTop="5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/txtTitle"
+            app:layout_constraintTop_toBottomOf="@+id/txtTitle" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/materialCardView3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginRight="15dp"
+            app:cardCornerRadius="25dp"
+            app:cardElevation="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/materialCardView2">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/ivBackdrop"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/dummy_backdrop"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="#57000000"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="@+id/ivBackdrop"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/ic_play" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="-10dp"
+                        android:text="@string/watch_trailler"
+                        android:textColor="@color/white" />
+
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="40dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/roboto_bold"
+            android:maxLines="2"
+            android:text="Overview"
+            android:textColor="@color/white"
+            android:textSize="22sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/materialCardView3" />
 
         <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:adjustViewBounds="true" />
+            android:id="@+id/imageView2"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginRight="5dp"
+            android:adjustViewBounds="true"
+            android:src="@drawable/ic_star"
+            app:layout_constraintBottom_toBottomOf="@+id/textView2"
+            app:layout_constraintEnd_toStartOf="@+id/txtRating"
+            app:layout_constraintHorizontal_bias="1"
+            app:layout_constraintStart_toEndOf="@+id/textView2"
+            app:layout_constraintTop_toTopOf="@+id/textView2" />
 
-    </com.google.android.material.card.MaterialCardView>
+        <TextView
+            android:id="@+id/txtRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_medium"
+            android:text="8.5"
+            android:layout_marginRight="15dp"
+            android:textColor="#EFEFEF"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/textView2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textView2" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="20dp"
-        android:fontFamily="@font/roboto_bold"
-        android:text="Once Upon a Time in Hollywood"
-        android:textColor="@color/white"
-        android:textSize="25sp"
-        app:layout_constraintBottom_toBottomOf="@+id/materialCardView2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/materialCardView2"
-        app:layout_constraintTop_toTopOf="@+id/materialCardView2" />
+        <TextView
+            android:id="@+id/txtOverview"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="15dp"
+            android:text="@string/dummy_overview"
+            android:textColor="@color/grayEF"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
-    <TextView
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Once Upon a Time in Hollywood"
-        android:textColor="@color/white"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="#27FFFFFF"
+            android:orientation="vertical"
+            android:layout_marginTop="25dp"
+            android:padding="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtOverview">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_bold"
+                android:text="@string/actors"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none"
+                android:overScrollMode="never"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

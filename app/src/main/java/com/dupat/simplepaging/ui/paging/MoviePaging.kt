@@ -21,9 +21,9 @@ class MoviePaging(val apiInterface: ApiInterface) : PagingSource<Int, ResultMode
             val data = apiInterface.getPopularMovies(page = page)
 
             LoadResult.Page(
-                data = data.results,
+                data = data.body()?.results!!,
                 prevKey = if(page == 1) null else page-1,
-                nextKey = if(page >= data.total_pages) null else page+1
+                nextKey = if(page >= data.body()?.total_pages!!) null else page+1
             )
 
         }

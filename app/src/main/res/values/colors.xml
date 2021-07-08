@@ -10,4 +10,5 @@
     <color name="transparent">#00FFFFFF</color>
 
     <color name="rippleColorCard">#BCBCBC</color>
+    <color name="grayEF">#EFEFEF</color>
 </resources>
