@@ -144,8 +144,8 @@ dependencies {
     <th>Example 2</th>
   </tr>
   <tr>
-    <td><img src="screenshot/home.png"/></td>
-    <td><img src="screenshot/detail.png"/></td>
+    <td><img src="screenshot/home.jpg"/></td>
+    <td><img src="screenshot/detail.jpg"/></td>
   </tr>
 </table>
 
