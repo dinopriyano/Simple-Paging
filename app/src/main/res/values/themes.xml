@@ -15,6 +15,7 @@
         <item name="android:navigationBarColor" tools:targetApi="l">@color/white</item>
         <item name="android:windowLightNavigationBar" tools:targetApi="o_mr1">true</item>
         <!-- Customize your theme here. -->
+        <item name="colorControlNormal">@color/white</item>
     </style>
 
     <style name="ToolbarTitle" parent="@android:style/TextAppearance.Medium">

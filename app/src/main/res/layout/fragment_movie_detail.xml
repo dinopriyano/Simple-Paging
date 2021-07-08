@@ -5,7 +5,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient_pink"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.fragment.MovieDetailFragment">
 
@@ -23,7 +22,6 @@
             app:cardBackgroundColor="@color/white"
             app:cardCornerRadius="40dp"
             app:cardElevation="0dp"
-            app:contentPadding="5dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:rippleColor="@color/rippleColorCard">
@@ -32,7 +30,7 @@
                 android:id="@+id/ivMovie"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:adjustViewBounds="true" />
+                android:scaleType="centerCrop" />
 
         </com.google.android.material.card.MaterialCardView>
 
@@ -87,7 +85,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
-                    android:src="@drawable/dummy_backdrop"
+                    android:src="@drawable/default_backdrop"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -192,7 +190,6 @@
             android:background="#27FFFFFF"
             android:orientation="vertical"
             android:layout_marginTop="25dp"
-            android:padding="15dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtOverview">
@@ -201,13 +198,20 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/roboto_bold"
-                android:text="@string/actors"
+                android:text="@string/production_companies"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="15dp"
                 android:textColor="@color/white"
                 android:textSize="20sp" />
 
             <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvCompany"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="7.5dp"
+                android:layout_marginRight="7.5dp"
+                android:layout_marginBottom="15dp"
                 android:scrollbars="none"
                 android:overScrollMode="never"/>
 

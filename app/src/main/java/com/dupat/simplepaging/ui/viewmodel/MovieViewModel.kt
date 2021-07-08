@@ -23,6 +23,7 @@ class MovieViewModel @Inject constructor(private val apiInterface: ApiInterface,
 
     private var state: SingleLiveEvent<ViewState> = SingleLiveEvent()
     private var movie = MutableLiveData<MovieDetailModel>()
+    private var background = MutableLiveData<Int>()
 
     val movies = Pager(PagingConfig(pageSize = 20)){
         MoviePaging(apiInterface)
@@ -46,8 +47,13 @@ class MovieViewModel @Inject constructor(private val apiInterface: ApiInterface,
         }
     }
 
+    fun setBackground(bg: Int){
+        background.postValue(bg)
+    }
+
 
     fun getState() = state
     fun getMovie() = movie
+    fun getBackground() = background
 
 }

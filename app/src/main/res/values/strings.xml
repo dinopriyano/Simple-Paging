@@ -6,4 +6,7 @@
     <string name="watch_trailler">Watch trailler</string>
     <string name="dummy_overview">A card shark and his unwillingly-enlisted friends need to make a lot of cash quick after losing a sketchy poker match. To do this they decide to pull a heist on a small-time gang who happen to be operating out of the flat next door.</string>
     <string name="actors">Actors</string>
+    <string name="loading">Loading...</string>
+    <string name="production_companies">Production Companies</string>
+    <string name="dummy_company">Original Film</string>
 </resources>

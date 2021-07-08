@@ -10,7 +10,7 @@ import retrofit2.http.Query
 
 interface ApiInterface {
 
-    @GET("popular")
+    @GET("top_rated")
     suspend fun getPopularMovies(
         @Query("api_key") apiKey: String = Constant.API_KEY,
         @Query("page") page: Int
